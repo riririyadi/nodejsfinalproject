@@ -122,9 +122,9 @@ router.get("/note/:id", authenticateJWT, async (req, res) => {
 
   try {
     const note = await Note.findOne({ where: { id } });
-    if (note.userId != user.id) {
-      return res.sendStatus(401);
-    }
+    // if (note.userId != user.id) {
+    //   return res.sendStatus(401);
+    // }
     res.send(shareNotes({ note }));
   } catch (error) {
     console.log(error)

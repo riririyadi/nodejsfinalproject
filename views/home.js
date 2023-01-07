@@ -46,7 +46,11 @@ const showSharedNotes = (sharedNotes) => {
   }
   let data = "";
   notes.forEach((element) => {
-    data += `<div style="margin-bottom:10px;padding:10px; border-radius:10px;box-shadow: 4px 3px 14px -5px rgba(16,16,16,0.6);;">
+    data += `<div 
+    onclick="location.href='/note/${
+      element.id
+    }'"
+    style="margin-bottom:10px;padding:10px; border-radius:10px;box-shadow: 4px 3px 14px -5px rgba(16,16,16,0.6);;">
               <div><b> <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/null/external-Paper-Clip-office-those-icons-lineal-those-icons-3.png"/> ${
                 element.title
               }</b></div>
