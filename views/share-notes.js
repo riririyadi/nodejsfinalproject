@@ -1,7 +1,7 @@
 const layout = require("./layout");
 const moment = require("moment");
 
-module.exports = ({ note }) => {
+module.exports = ({ note, user }) => {
   return layout({
     content: `
     <div>
@@ -16,7 +16,7 @@ module.exports = ({ note }) => {
         <p>${note.body}</p>
         </div>
         ${
-          note.type == "Public"
+          note.type == "Public" && note.userId == user.id
             ? ` <form method="POST">
      
             <label for="dt">Share to :</label>
